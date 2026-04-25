@@ -1,4 +1,4 @@
-﻿// Evernote2Onenote - imports Evernote notes to Onenote
+// Evernote2Onenote - imports Evernote notes to Onenote
 // Copyright (C) 2014 - Stefan Kueng
 
 // This program is free software: you can redistribute it and/or modify
@@ -23,19 +23,23 @@ namespace Evernote2Onenote
     {
         /// <summary>
         /// The main entry point for the application.
+        /// CLI: Evernote2Onenote.exe [importFolder] [date] [logFolder]
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string cmdNotebook = String.Empty;
-            string cmdDate = String.Empty;
+            string cmdNotebook  = String.Empty;
+            string cmdDate      = String.Empty;
+            string cmdLogFolder = String.Empty;
             if (args.Length >= 1)
                 cmdNotebook = args[0];
             if (args.Length >= 2)
                 cmdDate = args[1];
-            Application.Run(new MainFrm(cmdNotebook, cmdDate));
+            if (args.Length >= 3)
+                cmdLogFolder = args[2];
+            Application.Run(new MainFrm(cmdNotebook, cmdDate, cmdLogFolder));
         }
     }
 }

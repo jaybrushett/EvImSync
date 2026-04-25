@@ -1,4 +1,4 @@
-﻿// Evernote2Onenote - imports Evernote notes to Onenote
+// Evernote2Onenote - imports Evernote notes to Onenote
 // Copyright (C) 2014 - Stefan Kueng
 
 // This program is free software: you can redistribute it and/or modify
@@ -14,19 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Evernote2Onenote.Enums
 {
     public enum SyncStep
     {
         Start,
+        ScanningFolder,
         ExtractNotes,
         ParseNotes,
         CalculateWhatToDo,
-        ImportNotes
+        ImportNotes,
+        WritingManifest
     }
 }
